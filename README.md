@@ -6,7 +6,7 @@ It is intended to visualize the flow's version.
 
 ## Nodes
 
--   version
+-   version     
     ![version node](/images/version.png)
 
 ## Example:
