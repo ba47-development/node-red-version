@@ -1,0 +1,69 @@
+<script type='text/javascript'>
+    function getEnvironVal(val) {
+        const def = $.Deferred();
+
+        $.getJSON('/environ-val/' + val)
+            .done(function (result) {
+                def.resolve(result.value);
+            }).fail(function () {
+                def.resolve('');
+            });
+
+        return def;
+    }
+
+    RED.nodes.registerType('ba47-version', {
+        category: 'helpers',
+        color: '#98b8a1',
+        icon: 'font-awesome/fa-legal',
+        defaults: {
+            version: { value: '', required: true },
+            versionType: { value: 'str' },
+            versionCalc: { value: '' }
+        },
+        inputs: 1,
+        outputs: 1,
+        label: function () {
+            return this.versionCalc || 'version';
+        },
+        paletteLabel: "version",
+
+        oneditprepare: function () {
+            $('#node-input-version').typedInput({
+                type: 'str',
+                types: ['str', 'env'],
+                typeField: '#node-input-versionType'
+            });
+        },
+        oneditsave: function () {
+            if (this.versionType === 'str') {
+                $('#node-input-versionCalc').val(this.version);
+            } else {
+                let node = this;
+                getEnvironVal(node.version).then(function (ret) {
+                    node.versionCalc = ret;
+                });
+            }
+        }
+    });
+</script>
+
+
+<script type="text/html" data-template-name="ba47-version">
+    <div class="form-row">
+        <label for="node-input-version"><i class="fa fa-legal"></i> Version</label>
+        <input type="text" id="node-input-version" placeholder="Version">
+        <input type="hidden" id="node-input-versionType">
+        <input type="hidden" id="node-input-versionCalc">
+    </div>
+</script>
+
+
+<script type="text/markdown" data-help-name="ba47-version">
+# Version
+Version 0.2     
+Display version information in the node title.
+
+## outputs
+: version (string) : version information
+</script>
