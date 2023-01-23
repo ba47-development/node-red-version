@@ -1,6 +1,6 @@
 {
     "name": "@ba47/node-red-contrib-version",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "Display version information in flows",
     "keywords": [
         "node-red",
@@ -8,6 +8,10 @@
     ],
     "author": "Thomas Zimmermann <development@ba47.net>",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ba47-thomas/node-red-contrib-version.git"
+    },
     "node-red": {
         "nodes": {
             "version": "src/version.js"

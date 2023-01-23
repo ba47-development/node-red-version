@@ -24,6 +24,7 @@ module.exports = function (RED) {
             done();
         });
 
+        // HTTP-Admin callback to receive the version
         RED.httpAdmin.get('/environ-val/:key', function (req, res) {
             res.json({ value: process.env[req.params.key] });
         });

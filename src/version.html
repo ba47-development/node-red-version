@@ -19,12 +19,21 @@
         defaults: {
             version: { value: '', required: true },
             versionType: { value: 'str' },
-            versionCalc: { value: '' }
+            versionEnv: { value: '' }
         },
         inputs: 1,
         outputs: 1,
         label: function () {
-            return this.versionCalc || 'version';
+            if (this.versionType === 'str') {
+                return this.version || 'version';
+            } else {
+                let node = this;
+                getEnvironVal(node.version).then(function (ret) {
+                    node.versionEnv = ret;
+                });
+
+                return this.versionEnv || 'version';
+            }
         },
         paletteLabel: "version",
 
@@ -34,16 +43,6 @@
                 types: ['str', 'env'],
                 typeField: '#node-input-versionType'
             });
-        },
-        oneditsave: function () {
-            if (this.versionType === 'str') {
-                $('#node-input-versionCalc').val(this.version);
-            } else {
-                let node = this;
-                getEnvironVal(node.version).then(function (ret) {
-                    node.versionCalc = ret;
-                });
-            }
         }
     });
 </script>
@@ -54,14 +53,14 @@
         <label for="node-input-version"><i class="fa fa-legal"></i> Version</label>
         <input type="text" id="node-input-version" placeholder="Version">
         <input type="hidden" id="node-input-versionType">
-        <input type="hidden" id="node-input-versionCalc">
+        <input type="hidden" id="node-input-versionEnv">
     </div>
 </script>
 
 
 <script type="text/markdown" data-help-name="ba47-version">
 # Version
-Version 0.2     
+Version 0.3.0     
 Display version information in the node title.
 
 ## outputs
