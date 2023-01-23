@@ -2,7 +2,7 @@
     function getEnvironVal(val) {
         const def = $.Deferred();
 
-        $.getJSON('/environ-val/' + val)
+        $.getJSON(`environ-val/${val}`)
             .done(function (result) {
                 def.resolve(result.value);
             }).fail(function () {
