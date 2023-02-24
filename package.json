@@ -1,5 +1,5 @@
 {
-    "name": "@ba47/node-red-contrib-version",
+    "name": "@ba47/node-red-version",
     "version": "0.3.0",
     "description": "Display version information of flow",
     "keywords": [
@@ -10,7 +10,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/ba47-development/node-red-contrib-version/"
+        "url": "https://github.com/ba47-development/node-red-version/"
     },
     "node-red": {
         "nodes": {
