@@ -1,6 +1,6 @@
 [
     {
-        "id": "2f5da8f8c258640f",
+        "id": "d1fc7f2ca2d28e8c",
         "type": "group",
         "z": "67f08dbd3ee93df0",
         "name": "",
@@ -10,23 +10,23 @@
             "label": true
         },
         "nodes": [
-            "c949d4b60d15c3fe"
+            "71a4bb4d33cf9912"
         ],
-        "x": 334,
-        "y": 859,
+        "x": 374,
+        "y": 1039,
         "w": 152,
         "h": 82
     },
     {
-        "id": "c949d4b60d15c3fe",
-        "type": "ba47-version",
+        "id": "71a4bb4d33cf9912",
+        "type": "version",
         "z": "67f08dbd3ee93df0",
-        "g": "2f5da8f8c258640f",
+        "g": "d1fc7f2ca2d28e8c",
         "version": "1.0.0",
         "versionType": "str",
         "versionEnv": "",
-        "x": 410,
-        "y": 900,
+        "x": 450,
+        "y": 1080,
         "wires": [
             []
         ]

@@ -30,5 +30,5 @@ module.exports = function (RED) {
         });
     }
 
-    RED.nodes.registerType('ba47-version', versionNode);
+    RED.nodes.registerType('version', versionNode);
 };
