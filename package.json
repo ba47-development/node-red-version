@@ -1,6 +1,6 @@
 {
     "name": "@ba47/node-red-version",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Display version information of flow",
     "keywords": [
         "node-red",
@@ -13,8 +13,12 @@
         "url": "https://github.com/ba47-development/node-red-version/"
     },
     "node-red": {
+        "version": ">=2.2.0",
         "nodes": {
             "version": "src/version.js"
         }
+    },
+    "engines": {
+        "node": ">=14.0.0"
     }
 }

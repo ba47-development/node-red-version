@@ -1,0 +1,34 @@
+[
+    {
+        "id": "2f5da8f8c258640f",
+        "type": "group",
+        "z": "67f08dbd3ee93df0",
+        "name": "",
+        "style": {
+            "stroke": "#d1d1d1",
+            "fill": "#ffff3f",
+            "label": true
+        },
+        "nodes": [
+            "c949d4b60d15c3fe"
+        ],
+        "x": 334,
+        "y": 859,
+        "w": 152,
+        "h": 82
+    },
+    {
+        "id": "c949d4b60d15c3fe",
+        "type": "ba47-version",
+        "z": "67f08dbd3ee93df0",
+        "g": "2f5da8f8c258640f",
+        "version": "1.0.0",
+        "versionType": "str",
+        "versionEnv": "",
+        "x": 410,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    }
+]
